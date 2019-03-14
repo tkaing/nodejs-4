@@ -1,0 +1,19 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.favicon {
+	width: 33px;
+    margin: 20px 0;
+    margin-right: 10px;
+    float: left;
+}
+
+.description {
+	white-space: pre-wrap;
+}

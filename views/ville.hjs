@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ title }}</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+    <img src="/images/favicon.png" class="favicon">
+    <h1>{{ title }}</h1>
+    <p>Welcome to {{ title }}</p>
+
+    <div class="container">
+        <div class="row">
+            <div class="col"></div>
+
+            <div class="col-8">
+                {{#success}}
+                    <h3 class="ville">Ville: {{ ville }}</h3>
+
+                    <p class="description">{{ description }}</p>
+
+                    <iframe src="https://maps.google.com/maps?q={{ latitude }},{{ longitude }}+&hl=es;z=14&amp;output=embed" width="600" height="450" frameborder="0" allowfullscreen></iframe>
+                {{/success}}
+                {{^success}}
+                    <h3 class="error">{{ message }}</h3>
+                {{/success}}
+            </div>
+
+            <div class="col"></div>
+        </div>
+    </div>
+</body>
+
+</html>
