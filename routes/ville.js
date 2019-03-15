@@ -39,7 +39,7 @@ router.post('/', function(req, res, next) {
 				latitude: result.latt,
 				success: success,
 				message: message,
-				result: result
+				result: JSON.stringify(result)
 			});
 		});
 	}).on("error", (err) => {
