@@ -26,9 +26,7 @@ router.post('/', function(req, res, next) {
 			var message = 'Ville introuvable';
 			var success = false;
 
-			console.log(result);
-
-			if (result.matches !== null && ville !== '') {
+			if (result.error === undefined && ville !== '') {
 				message = ville;
 				success = true;
 			}
@@ -41,6 +39,7 @@ router.post('/', function(req, res, next) {
 				latitude: result.latt,
 				success: success,
 				message: message,
+				result: result
 			});
 		});
 	}).on("error", (err) => {
