@@ -26,6 +26,7 @@
                     <iframe src="https://maps.google.com/maps?q={{ latitude }},{{ longitude }}+&hl=es;z=14&amp;output=embed" width="600" height="450" frameborder="0" allowfullscreen></iframe>
                 {{/success}}
                 {{^success}}
+                    {{ result }}
                     <h3 class="error">{{ message }}</h3>
                 {{/success}}
             </div>
