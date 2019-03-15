@@ -23,12 +23,13 @@ router.post('/', function(req, res, next) {
 		// The whole response has been received. Print out the result.
 		resp.on('end', () => {
 			var result = JSON.parse(data);
-			var message = 'Ville introuvable';
-			var success = false;
+			var message = ville;
+			var success = true;
 
-			if (result.error === undefined && ville !== '') {
-				message = ville;
-				success = true;
+			if (result.error !== undefined) 
+			{
+				message = 'Ville introuvable';
+				success = false;
 			}
 
 			res.render('ville', { 
@@ -38,8 +39,7 @@ router.post('/', function(req, res, next) {
 				longitude: result.longt,
 				latitude: result.latt,
 				success: success,
-				message: message,
-				result: JSON.stringify(result)
+				message: message
 			});
 		});
 	}).on("error", (err) => {
